@@ -43,6 +43,6 @@
     (run-http (fn [req res]
                 (let [request (make-request req)]
                   (dispatcher request res))) opts)
-    (util/log "Server started at http://localhost:" (:port opts))))
+    (util/log "Server started at http://localhost:%s" (:port opts))))
 
 (set! *main-cli-fn* main)
