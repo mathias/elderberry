@@ -2,8 +2,8 @@
 
 (defn route-matches?
   [method url req]
-  (and (= url (:url req))
-       (= method (:method req))))
+  (and (= url (.-url req))
+       (= method (.-method req))))
 
 (defn create-route
   [method url handler]

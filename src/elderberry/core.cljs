@@ -40,9 +40,7 @@
 
 (defn main [& args]
    (let [opts {:port 3000}]
-    (run-http (fn [req res]
-                (let [request (make-request req)]
-                  (dispatcher request res))) opts)
+    (run-http dispatcher opts)
     (util/log "Server started at http://localhost:%s" (:port opts))))
 
 (set! *main-cli-fn* main)
