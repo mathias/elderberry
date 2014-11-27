@@ -22,5 +22,5 @@
   ((apply comp (conj routes
                      (fn [continue]
                        (fn [req res]
-                         (continue)))))
-   (fn [] "404")))
+                         (.writeHead res 404)
+                         (.end res "Not found")))))))
