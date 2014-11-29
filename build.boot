@@ -1,11 +1,10 @@
 (set-env! :dependencies '[[boot/core                 "2.0.0-pre27" :scope "provided"]
                           [tailrecursion/boot-useful "0.1.3"       :scope "test"] 
-                          [adzerk/boot-cljs "0.0-2371-27"          :scope "test"]
-                          [adzerk/boot-cljs-repl "0.1.6" :scope "test"]])
+                          [adzerk/boot-cljs "0.0-2371-27"          :scope "test"]])
+
 (require
  '[tailrecursion.boot-useful :refer :all]
- '[adzerk.boot-cljs :refer :all]
- '[adzerk.boot-cljs-repl :refer :all])
+ '[adzerk.boot-cljs :refer :all])
 
 (def +version+ "0.0.1")
 
@@ -26,10 +25,6 @@
   (cljs :node-target true
         :optimizations :simple
         :pretty-print true))
-
-(deftask compile-example-app
-  "Compile the example Hello World app for node."
-  [])
 
 (deftask watch-compile
   "Generate JS from cljs"
